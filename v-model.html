@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-model</title>
+</head>
+<style>
+#btn,#inp{
+	height: 30px;
+	line-height: 30px;
+}
+#inp{
+	padding: 0 0 0 20px;
+}
+#btn{
+	width: 100px;
+	text-align: center;
+	color: #fff;
+	background: red;
+	border-radius: 5px;
+	display: inline-block;
+	font-size: 14px;
+}
+img{
+	margin-top: 100px;
+}
+</style>
+<body>
+	<div id="app">
+		<input id="inp" v-model="username"></input> 
+		<a @click="changeName" id="btn">点击改变姓名</a>
+	</div>
+
+	<img src="image/1.png" alt="">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+	var app = new Vue({
+		el:'#app',
+		data: {
+			username: '张三',
+		},
+		methods:{
+			changeName: function(){
+				app.username = '李四'
+			}
+		}
+	})
+	</script>
+</body>
+</html>

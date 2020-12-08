@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>x-template</title>
+</head>
+<style>
+img{
+	margin-top: 100px;
+}
+</style>
+<body>
+	<div id="vm">
+		<hello-world></hello-world>
+
+		<!-- 模板 start-->
+		<script type="text/x-template" id="hello-world-template">
+		  <p>Hello hello hello</p>
+		</script>
+		<!-- 模板 end-->
+	</div>
+
+	<img src="image/13.png" alt="">
+	
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+
+	Vue.component('hello-world', {
+	  template: '#hello-world-template'
+	})
+	var vm = new Vue({
+	  el: '#vm',
+	})
+	</script>
+</body>
+</html>

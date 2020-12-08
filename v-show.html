@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-show && v-hide</title>
+</head>
+<style>
+img{
+	margin-top: 100px;
+}
+</style>
+<body>
+	<div id="app">
+		<div id="label_01" v-show="true">我是标签001,显示</div> 
+		<div id="label_02" v-hide="false">我是标签002,显示</div>
+	</div>
+
+	<img src="image/2.png" alt="">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+	var app = new Vue({
+		el:'#app',
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class绑定</title>
+</head>
+<style>
+img{
+	margin-top: 100px;
+}
+a{
+	width: 100px;
+	text-align: center;
+	color: #fff;
+	background: red;
+	border-radius: 5px;
+	display: block;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	text-decoration: none;
+}
+p.cur{
+	color: red;
+}
+</style>
+<body>
+	<div id="app">
+	 	<p :class="{cur: isActive}">我是黑色文字文字</p>
+	 	<a href="javascript:;" @click="changeColor">点击改变颜色</a>
+	</div>
+	<img src="image/9.png" alt="">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+	var app = new Vue({
+		el:'#app',
+		data: {
+			isActive: false,
+		},
+		methods: {
+			changeColor: function(){
+				app.isActive = true;
+			}
+		}
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>computed计算属性</title>
+</head>
+<style>
+img{
+	margin-top: 100px;
+}
+</style>
+<body>
+	<div id="app">
+	  原字符串：<p>{{message}}</p>
+	  反转字符串：<p>{{reversedMessage}}</p>
+	</div>
+	<img src="image/7.png" alt="">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+	var app = new Vue({
+		el:'#app',
+		data: {
+			message: 'Hello'
+		},
+		computed: {
+		    reversedMessage: function () {
+		      return this.message.split('').reverse().join('');
+		    }
+		}
+	})
+	</script>
+</body>
+</html>

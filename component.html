@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>component组件</title>
+</head>
+<style>
+img{
+	margin-top: 100px;
+}
+</style>
+<body>
+	<div id="app" style="margin-bottom: 10px">
+		<!-- 组件my-counter 被作为自定义元素，嵌套在根元素 app 里面 -->
+	  	<my-counter></my-counter>
+	</div>
+
+	<div id="vm">
+		<component-a></component-a>
+	</div>
+
+	<img src="image/10.png" alt="">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+	
+	// 全局注册
+	Vue.component('my-counter', {
+
+		//数据属性data 必须是一个返回值的函数
+		data: function(){ 
+			return {count: 0}
+		},
+
+		//template 是模板的意思，在这里定义了组件的内容
+		template: '<button v-on:click="count++">点击计算点击次数：{{count}}次</button>'
+	});
+	var app = new Vue({
+		el:'#app',
+	})
+
+//------------------------------------------------------------------------------------------//
+
+	var ComponentA = {
+		data: function(){
+			return {count: 0}
+		},
+		template: '<button v-on:click="count++">点击计算点击次数：{{count}}次</button>'
+	}
+	//局部注册
+	var vm = new Vue({
+	  el: '#vm',
+	  components: {
+	    'component-a': ComponentA,
+	  }
+	})
+	</script>
+</body>
+</html>

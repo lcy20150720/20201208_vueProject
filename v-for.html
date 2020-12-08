@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-for</title>
+</head>
+<style>
+img{
+	margin-top: 100px;
+}
+</style>
+<body>
+	<div id="app">
+		<!-- 数组循环遍历 start-->
+		<div v-for="(item, index) in arr" :key="index"> <span>第{{index+1}}个:</span> {{item}}</div>
+		<!-- 数组循环遍历 end-->
+	</div>
+	<img src="image/4.png" alt="">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+	var app = new Vue({
+		el:'#app',
+		data: {
+			arr: ['苹果','梨','香蕉']
+		},
+		methods:{
+
+		}
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-on</title>
+</head>
+<style>
+img{
+	margin-top: 100px;
+}
+a{
+	width: 100px;
+	text-align: center;
+	color: #fff;
+	background: red;
+	border-radius: 5px;
+	display: block;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+}
+</style>
+<body>
+	<div id="app">
+		<!-- 完整写法 -->
+		<a href="javascript:;" v-on:click="getName">获取姓名</a>
+		<!-- 缩写（常用写法） -->
+		<a href="javascript:;" @click="getAge">获取年龄</a>
+	</div>
+	<img src="image/5.png" alt="">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+	var app = new Vue({
+		el:'#app',
+		data: {
+			
+		},
+		methods:{
+			getName: function(){
+				console.log('张三');
+			},
+			getAge: function(){
+				console.log('18岁');
+			}
+		}
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-bind</title>
+</head>
+<style>
+img{
+	margin-top: 100px;
+}
+</style>
+<body>
+	<div id="app">
+
+		<!-- 完整写法 -->
+		<a  v-bind:href="linkUrl">v-bind:href完整写法</a>
+		<!-- 缩写（常用写法） -->
+		<a :href="linkUrl">:href缩写加冒号就可以</a>
+
+		<!-- 同理还有img等 -->
+		<img :src="imgUrl" alt="">
+
+	</div>
+	<img src="image/6.png" alt="">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+	var app = new Vue({
+		el:'#app',
+		data: {
+			linkUrl: 'https://www.baidu.com',
+			imgUrl: 'https://picsum.photos/200/300'
+		},
+		methods:{
+		
+		}
+	})
+	</script>
+</body>
+</html>

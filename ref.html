@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ref</title>
+</head>
+<style>
+img{
+	margin-top: 100px;
+}
+</style>
+<body>
+	<div id="vm">
+		<p ref="userNum">123456</p>
+		<a href="javascript:;" @click="getUserNum">获取userNum</a>
+	</div>
+
+	<img src="image/12.png" alt="">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+	//局部注册
+	var vm = new Vue({
+	  el: '#vm',
+	  data: {
+
+	  },
+	  methods: {
+	  	getUserNum: function(){
+	  		var tag = this.$refs.userNum;
+	  		tag.innerHTML = 78910;
+	  		console.log(tag)
+	  	}
+	  }
+	})
+	</script>
+</body>
+</html>

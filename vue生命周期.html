@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue生命周期</title>
+</head>
+<style>
+img{
+	margin-top: 100px;
+}
+</style>
+<body>
+	<div id="app">
+
+
+	</div>
+
+    <img src="image/0.png" alt="">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+	var app = new Vue({
+		el:'#app',
+		data: {
+
+		},
+		//方法
+		methods: {
+
+		},
+		//实例被创建之后
+		created: function(){
+			console.log('created');
+		},
+		//初始化页面完成后，对dom节点进行相关操作
+		mounted: function(){
+			console.log('mounted');
+		},
+		updated: function(){
+			console.log('updated');
+		    this.$nextTick(function(){
+		          //在下次 DOM 更新循环结束之后执行这个回调。在修改数据之后立即使用这个方法，获取更新后的DOM.
+		          console.log("3==我只能等页面渲染完了才会立即执行");
+		     })
+    		 console.log("2==我虽然在最后但会比$nextTick先执行")
+		},
+		//离开页面的时候，便会调用这个函数，常用来销毁一些监听事件及定时函数
+		destroyed: function(){
+			console.log('destroyed');
+		}
+	})
+
+	</script>
+</body>
+</html>

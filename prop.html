@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>component组件</title>
+</head>
+<style>
+img{
+	margin-top: 100px;
+}
+</style>
+<body>
+	<div id="vm">
+		<component-a post-title="hello,Jaxu!"></component-a>
+	</div>
+
+	<img src="image/11.png" alt="">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+	var ComponentA = {
+		props: ['postTitle'],
+		template: '<p>{{postTitle}}</p>'
+	}
+	//局部注册
+	var vm = new Vue({
+	  el: '#vm',
+	  components: {
+	    'component-a': ComponentA,
+	  }
+	})
+	</script>
+</body>
+</html>
